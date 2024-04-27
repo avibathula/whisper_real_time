@@ -4,31 +4,20 @@
 
 This is a demo of real time speech to text with OpenAI's Whisper model. It works by constantly recording audio in a thread and concatenating the raw bytes over multiple recordings.
 
-To install dependencies simply run
+## Updated installation
+
+The project has been updated to use poetry.
+
+`PyAudio` package has a dependency on `PortAudio` library, So, we need to
+install the `PortAudio` library on your Mac. You can do this using the Homebrew
+package manager with the following command:
 ```
-pip install -r requirements.txt
-```
-in an environment of your choosing.
-
-Whisper also requires the command-line tool [`ffmpeg`](https://ffmpeg.org/) to be installed on your system, which is available from most package managers:
-
-```
-# on Ubuntu or Debian
-sudo apt update && sudo apt install ffmpeg
-
-# on Arch Linux
-sudo pacman -S ffmpeg
-
-# on MacOS using Homebrew (https://brew.sh/)
-brew install ffmpeg
-
-# on Windows using Chocolatey (https://chocolatey.org/)
-choco install ffmpeg
-
-# on Windows using Scoop (https://scoop.sh/)
-scoop install ffmpeg
+brew install portaudio
 ```
 
-For more information on Whisper please see https://github.com/openai/whisper
+Then, to install dependencies simply run
+```
+poetry install
+```
 
-The code in this repository is public domain.
+Reference: see [original installation info](original_installation.md)
